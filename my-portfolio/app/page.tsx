@@ -177,67 +177,65 @@ export default function Page() {
 
       {/* Hero */}
       <section id="home" className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-20 lg:py-28">
-        <div className="flex flex-col md:flex-row gap-12 md:gap-16 items-center">
-          <div className="text-center md:text-left flex-1 animate-fade-in-up w-full">
-            <div className="relative inline-block mb-6 sm:mb-8 group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl sm:rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-              <div className="relative h-40 w-40 sm:h-48 sm:w-48 md:h-52 md:w-52 rounded-2xl sm:rounded-3xl overflow-hidden ring-4 ring-white dark:ring-slate-800 shadow-2xl transform group-hover:scale-105 transition-transform duration-300 mx-auto md:mx-0">
-                <img src={PHOTO_URL} alt="Alexander Lin headshot" className="object-cover h-full w-full" />
-              </div>
+        <div className="flex flex-col items-center justify-center text-center animate-fade-in-up">
+          <div className="relative inline-block mb-8 sm:mb-10 group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl sm:rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+            <div className="relative h-40 w-40 sm:h-48 sm:w-48 md:h-56 md:w-56 rounded-2xl sm:rounded-3xl overflow-hidden ring-4 ring-white dark:ring-slate-800 shadow-2xl transform group-hover:scale-105 transition-transform duration-300 mx-auto">
+              <img src={PHOTO_URL} alt="Alexander Lin headshot" className="object-cover h-full w-full" />
             </div>
+          </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-3 sm:mb-4 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-100 dark:via-slate-200 dark:to-slate-100 bg-clip-text text-transparent leading-tight">
-              {PROFILE.name}
-            </h1>
-            <p className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-400 mb-4 sm:mb-6 font-medium">
-              {PROFILE.title}
-            </p>
-            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mb-6 sm:mb-8 leading-relaxed mx-auto md:mx-0">
-              {PROFILE.tagline}
-            </p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 sm:mb-5 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 dark:from-slate-100 dark:via-slate-200 dark:to-slate-100 bg-clip-text text-transparent leading-tight">
+            {PROFILE.name}
+          </h1>
+          <p className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-400 mb-5 sm:mb-6 font-medium">
+            {PROFILE.title}
+          </p>
+          <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mb-8 sm:mb-10 leading-relaxed mx-auto px-4">
+            {PROFILE.tagline}
+          </p>
 
-            <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm mb-6 sm:mb-8 justify-center md:justify-start">
-              <span className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700">
-                <span className="text-base sm:text-lg">📍</span> <span className="whitespace-nowrap">{PROFILE.location}</span>
-              </span>
+          <div className="flex flex-wrap gap-3 sm:gap-4 text-xs sm:text-sm mb-6 sm:mb-8 justify-center">
+            <span className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700">
+              <span className="text-base sm:text-lg">📍</span> <span className="whitespace-nowrap">{PROFILE.location}</span>
+            </span>
+            <a
+              href={`mailto:${PROFILE.email}`}
+              className="px-4 sm:px-5 py-2 sm:py-2.5 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:scale-105 transition-all duration-200 text-xs sm:text-sm break-all sm:break-normal"
+            >
+              {PROFILE.email}
+            </a>
+            <a
+              href={`tel:${PROFILE.phone}`}
+              className="px-4 sm:px-5 py-2 sm:py-2.5 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:scale-105 transition-all duration-200 whitespace-nowrap"
+            >
+              {PROFILE.phone}
+            </a>
+          </div>
+
+          <div className="flex flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10 justify-center">
+            {PROFILE.links.map((l) => (
               <a
-                href={`mailto:${PROFILE.email}`}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:scale-105 transition-all duration-200 text-xs sm:text-sm break-all sm:break-normal"
+                key={l.label}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 sm:px-6 py-2.5 sm:py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs sm:text-sm font-medium shadow-sm hover:shadow-md hover:scale-105 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-200"
               >
-                {PROFILE.email}
+                {l.label}
               </a>
-              <a
-                href={`tel:${PROFILE.phone}`}
-                className="px-3 sm:px-4 py-1.5 sm:py-2 bg-white dark:bg-slate-800 rounded-full shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-md hover:scale-105 transition-all duration-200 whitespace-nowrap"
-              >
-                {PROFILE.phone}
-              </a>
-            </div>
+            ))}
+          </div>
 
-            <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8 justify-center md:justify-start">
-              {PROFILE.links.map((l) => (
-                <a
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 sm:px-5 py-2 sm:py-2.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-xs sm:text-sm font-medium shadow-sm hover:shadow-md hover:scale-105 hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-200"
-                >
-                  {l.label}
-                </a>
-              ))}
-            </div>
-
-            <div className="flex gap-3 sm:gap-4 justify-center md:justify-start">
-              <a
-                href={RESUME_URL}
-                download={RESUME_NAME}
-                className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-100 dark:to-slate-200 text-white dark:text-slate-900 rounded-xl font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 overflow-hidden"
-              >
-                <span className="relative z-10">Download Resume</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </a>
-            </div>
+          <div className="flex gap-3 sm:gap-4 justify-center">
+            <a
+              href={RESUME_URL}
+              download={RESUME_NAME}
+              className="group relative px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-slate-900 to-slate-800 dark:from-slate-100 dark:to-slate-200 text-white dark:text-slate-900 rounded-xl font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 overflow-hidden"
+            >
+              <span className="relative z-10">Download Resume</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </a>
           </div>
         </div>
       </section>
