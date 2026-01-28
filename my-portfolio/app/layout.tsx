@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Alexander Lin | Portfolio",
-  description: "Georgia Tech CS student and CEO of EchoFives",
+  description: "Georgia Tech Computer Science student (Intelligence & Systems Architecture), CEO of EchoFives LLC, Full-Stack Developer, U.S. Marine Corps Veteran",
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
