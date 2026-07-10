@@ -250,14 +250,14 @@ export default function Page() {
         </div>
         <div className="bg-white/70 dark:bg-slate-900/70 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 shadow-xl border border-slate-200/50 dark:border-slate-800/50 hover:shadow-2xl transition-shadow duration-300">
           <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-700 dark:text-slate-300 mb-4 sm:mb-6">
-            I'm a <strong className="text-slate-900 dark:text-slate-100">Georgia Tech Computer Science student</strong> focusing on Intelligence, Systems &
+            I&apos;m a <strong className="text-slate-900 dark:text-slate-100">Georgia Tech Computer Science student</strong> focusing on Intelligence, Systems &
             Architecture. I served 5 years in the <strong className="text-slate-900 dark:text-slate-100">U.S. Marine Corps</strong>, learning leadership and
             discipline that now drive my work as <strong className="text-slate-900 dark:text-slate-100">CEO of EchoFives</strong> — building SaaS + hardware
             systems that empower local restaurants.
           </p>
           <p className="text-base sm:text-lg md:text-xl leading-relaxed text-slate-700 dark:text-slate-300">
-            With experience in full-stack development, I've worked on diverse projects ranging from construction
-            site management systems to restaurant POS solutions. I'm passionate about creating software that solves
+            With experience in full-stack development, I&apos;ve worked on diverse projects ranging from construction
+            site management systems to restaurant POS solutions. I&apos;m passionate about creating software that solves
             real-world problems and enhances user experiences.
           </p>
         </div>
